@@ -1,0 +1,1783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>SubnettingCalcs: SubnettingCalcs Class Reference</title>
+<style type="text/css">
+/* The standard CSS for doxygen */
+
+body, table, div, p, dl {
+	font-family: Lucida Grande, Verdana, Geneva, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.3;
+}
+
+/* @group Heading Levels */
+
+h1 {
+	font-size: 150%;
+}
+
+.title {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 10px 2px;
+}
+
+h2 {
+	font-size: 120%;
+}
+
+h3 {
+	font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	-webkit-transition: text-shadow 0.5s linear;
+	-moz-transition: text-shadow 0.5s linear;
+	-ms-transition: text-shadow 0.5s linear;
+	-o-transition: text-shadow 0.5s linear;
+	transition: text-shadow 0.5s linear;
+	margin-right: 15px;
+}
+
+h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
+	text-shadow: 0 0 15px cyan;
+}
+
+dt {
+	font-weight: bold;
+}
+
+div.multicol {
+	-moz-column-gap: 1em;
+	-webkit-column-gap: 1em;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+}
+
+p.startli, p.startdd, p.starttd {
+	margin-top: 2px;
+}
+
+p.endli {
+	margin-bottom: 0px;
+}
+
+p.enddd {
+	margin-bottom: 4px;
+}
+
+p.endtd {
+	margin-bottom: 2px;
+}
+
+/* @end */
+
+caption {
+	font-weight: bold;
+}
+
+span.legend {
+        font-size: 70%;
+        text-align: center;
+}
+
+h3.version {
+        font-size: 90%;
+        text-align: center;
+}
+
+div.qindex, div.navtab{
+	background-color: #EBEFF6;
+	border: 1px solid #A3B4D7;
+	text-align: center;
+}
+
+div.qindex, div.navpath {
+	width: 100%;
+	line-height: 140%;
+}
+
+div.navtab {
+	margin-right: 15px;
+}
+
+/* @group Link Styling */
+
+a {
+	color: #3D578C;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.contents a:visited {
+	color: #4665A2;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.qindex {
+	font-weight: bold;
+}
+
+a.qindexHL {
+	font-weight: bold;
+	background-color: #9CAFD4;
+	color: #ffffff;
+	border: 1px double #869DCA;
+}
+
+.contents a.qindexHL:visited {
+        color: #ffffff;
+}
+
+a.el {
+	font-weight: bold;
+}
+
+a.elRef {
+}
+
+a.code, a.code:visited {
+	color: #4665A2; 
+}
+
+a.codeRef, a.codeRef:visited {
+	color: #4665A2; 
+}
+
+/* @end */
+
+dl.el {
+	margin-left: -1cm;
+}
+
+pre.fragment {
+        border: 1px solid #C4CFE5;
+        background-color: #FBFCFD;
+        padding: 4px 6px;
+        margin: 4px 8px 4px 2px;
+        overflow: auto;
+        word-wrap: break-word;
+        font-size:  9pt;
+        line-height: 125%;
+        font-family: monospace, fixed;
+        font-size: 105%;
+}
+
+div.fragment {
+        padding: 4px;
+        margin: 4px;
+	background-color: #FBFCFD;
+	border: 1px solid #C4CFE5;
+}
+
+div.line {
+	font-family: monospace, fixed;
+        font-size: 13px;
+	min-height: 13px;
+	line-height: 1.0;
+	text-wrap: unrestricted;
+	white-space: -moz-pre-wrap; /* Moz */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: pre-wrap;      /* CSS3  */
+	word-wrap: break-word;      /* IE 5.5+ */
+	text-indent: -53px;
+	padding-left: 53px;
+	padding-bottom: 0px;
+	margin: 0px;
+	-webkit-transition-property: background-color, box-shadow;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-property: background-color, box-shadow;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-property: background-color, box-shadow;
+	-ms-transition-duration: 0.5s;
+	-o-transition-property: background-color, box-shadow;
+	-o-transition-duration: 0.5s;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+}
+
+div.line.glow {
+	background-color: cyan;
+	box-shadow: 0 0 10px cyan;
+}
+
+
+span.lineno {
+	padding-right: 4px;
+	text-align: right;
+	border-right: 2px solid #0F0;
+	background-color: #E8E8E8;
+        white-space: pre;
+}
+span.lineno a {
+	background-color: #D8D8D8;
+}
+
+span.lineno a:hover {
+	background-color: #C8C8C8;
+}
+
+div.ah {
+	background-color: black;
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 3px;
+	margin-top: 3px;
+	padding: 0.2em;
+	border: solid thin #333;
+	border-radius: 0.5em;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	box-shadow: 2px 2px 3px #999;
+	-webkit-box-shadow: 2px 2px 3px #999;
+	-moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#000),color-stop(0.3, #444));
+	background-image: -moz-linear-gradient(center top, #eee 0%, #444 40%, #000);
+}
+
+div.groupHeader {
+	margin-left: 16px;
+	margin-top: 12px;
+	font-weight: bold;
+}
+
+div.groupText {
+	margin-left: 16px;
+	font-style: italic;
+}
+
+body {
+	background-color: white;
+	color: black;
+        margin: 0;
+}
+
+div.contents {
+	margin-top: 10px;
+	margin-left: 12px;
+	margin-right: 8px;
+}
+
+td.indexkey {
+	background-color: #EBEFF6;
+	font-weight: bold;
+	border: 1px solid #C4CFE5;
+	margin: 2px 0px 2px 0;
+	padding: 2px 10px;
+        white-space: nowrap;
+        vertical-align: top;
+}
+
+td.indexvalue {
+	background-color: #EBEFF6;
+	border: 1px solid #C4CFE5;
+	padding: 2px 10px;
+	margin: 2px 0px;
+}
+
+tr.memlist {
+	background-color: #EEF1F7;
+}
+
+p.formulaDsp {
+	text-align: center;
+}
+
+img.formulaDsp {
+	
+}
+
+img.formulaInl {
+	vertical-align: middle;
+}
+
+div.center {
+	text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+}
+
+div.center img {
+	border: 0px;
+}
+
+address.footer {
+	text-align: right;
+	padding-right: 12px;
+}
+
+img.footer {
+	border: 0px;
+	vertical-align: middle;
+}
+
+/* @group Code Colorization */
+
+span.keyword {
+	color: #008000
+}
+
+span.keywordtype {
+	color: #604020
+}
+
+span.keywordflow {
+	color: #e08000
+}
+
+span.comment {
+	color: #800000
+}
+
+span.preprocessor {
+	color: #806020
+}
+
+span.stringliteral {
+	color: #002080
+}
+
+span.charliteral {
+	color: #008080
+}
+
+span.vhdldigit { 
+	color: #ff00ff 
+}
+
+span.vhdlchar { 
+	color: #000000 
+}
+
+span.vhdlkeyword { 
+	color: #700070 
+}
+
+span.vhdllogic { 
+	color: #ff0000 
+}
+
+blockquote {
+        background-color: #F7F8FB;
+        border-left: 2px solid #9CAFD4;
+        margin: 0 24px 0 4px;
+        padding: 0 12px 0 16px;
+}
+
+/* @end */
+
+/*
+.search {
+	color: #003399;
+	font-weight: bold;
+}
+
+form.search {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+input.search {
+	font-size: 75%;
+	color: #000080;
+	font-weight: normal;
+	background-color: #e8eef2;
+}
+*/
+
+td.tiny {
+	font-size: 75%;
+}
+
+.dirtab {
+	padding: 4px;
+	border-collapse: collapse;
+	border: 1px solid #A3B4D7;
+}
+
+th.dirtab {
+	background: #EBEFF6;
+	font-weight: bold;
+}
+
+hr {
+	height: 0px;
+	border: none;
+	border-top: 1px solid #4A6AAA;
+}
+
+hr.footer {
+	height: 1px;
+}
+
+/* @group Member Descriptions */
+
+table.memberdecls {
+	border-spacing: 0px;
+	padding: 0px;
+}
+
+.memberdecls td {
+	-webkit-transition-property: background-color, box-shadow;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-property: background-color, box-shadow;
+	-moz-transition-duration: 0.5s;
+	-ms-transition-property: background-color, box-shadow;
+	-ms-transition-duration: 0.5s;
+	-o-transition-property: background-color, box-shadow;
+	-o-transition-duration: 0.5s;
+	transition-property: background-color, box-shadow;
+	transition-duration: 0.5s;
+}
+
+.memberdecls td.glow {
+	background-color: cyan;
+	box-shadow: 0 0 15px cyan;
+}
+
+.mdescLeft, .mdescRight,
+.memItemLeft, .memItemRight,
+.memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+	background-color: #F9FAFC;
+	border: none;
+	margin: 4px;
+	padding: 1px 0 0 8px;
+}
+
+.mdescLeft, .mdescRight {
+	padding: 0px 8px 4px 8px;
+	color: #555;
+}
+
+.memItemLeft, .memItemRight, .memTemplParams {
+	border-top: 1px solid #C4CFE5;
+}
+
+.memItemLeft, .memTemplItemLeft {
+        white-space: nowrap;
+}
+
+.memItemRight {
+	width: 100%;
+}
+
+.memTemplParams {
+	color: #4665A2;
+        white-space: nowrap;
+}
+
+/* @end */
+
+/* @group Member Details */
+
+/* Styles for detailed member documentation */
+
+.memtemplate {
+	font-size: 80%;
+	color: #4665A2;
+	font-weight: normal;
+	margin-left: 9px;
+}
+
+.memnav {
+	background-color: #EBEFF6;
+	border: 1px solid #A3B4D7;
+	text-align: center;
+	margin: 2px;
+	margin-right: 15px;
+	padding: 2px;
+}
+
+.mempage {
+	width: 100%;
+}
+
+.memitem {
+	padding: 0;
+	margin-bottom: 10px;
+	margin-right: 5px;
+        -webkit-transition: box-shadow 0.5s linear;
+        -moz-transition: box-shadow 0.5s linear;
+        -ms-transition: box-shadow 0.5s linear;
+        -o-transition: box-shadow 0.5s linear;
+        transition: box-shadow 0.5s linear;
+        display: table !important;
+        width: 100%;
+}
+
+.memitem.glow {
+         box-shadow: 0 0 15px cyan;
+}
+
+.memname {
+        font-weight: bold;
+        margin-left: 6px;
+}
+
+.memname td {
+	vertical-align: bottom;
+}
+
+.memproto, dl.reflist dt {
+        border-top: 1px solid #A8B8D9;
+        border-left: 1px solid #A8B8D9;
+        border-right: 1px solid #A8B8D9;
+        padding: 6px 0px 6px 0px;
+        color: #253555;
+        font-weight: bold;
+        text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
+        background-image:url('nav_f.png');
+        background-repeat:repeat-x;
+        background-color: #E2E8F2;
+        /* opera specific markup */
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        /* firefox specific markup */
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        -moz-border-radius-topright: 4px;
+        -moz-border-radius-topleft: 4px;
+        /* webkit specific markup */
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        -webkit-border-top-right-radius: 4px;
+        -webkit-border-top-left-radius: 4px;
+
+}
+
+.memdoc, dl.reflist dd {
+        border-bottom: 1px solid #A8B8D9;      
+        border-left: 1px solid #A8B8D9;      
+        border-right: 1px solid #A8B8D9; 
+        padding: 6px 10px 2px 10px;
+        background-color: #FBFCFD;
+        border-top-width: 0;
+        background-image:url('nav_g.png');
+        background-repeat:repeat-x;
+        background-color: #FFFFFF;
+        /* opera specific markup */
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        /* firefox specific markup */
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-bottomright: 4px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
+        /* webkit specific markup */
+        -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+}
+
+dl.reflist dt {
+        padding: 5px;
+}
+
+dl.reflist dd {
+        margin: 0px 0px 10px 0px;
+        padding: 5px;
+}
+
+.paramkey {
+	text-align: right;
+}
+
+.paramtype {
+	white-space: nowrap;
+}
+
+.paramname {
+	color: #602020;
+	white-space: nowrap;
+}
+.paramname em {
+	font-style: normal;
+}
+.paramname code {
+        line-height: 14px;
+}
+
+.params, .retval, .exception, .tparams {
+        margin-left: 0px;
+        padding-left: 0px;
+}       
+
+.params .paramname, .retval .paramname {
+        font-weight: bold;
+        vertical-align: top;
+}
+        
+.params .paramtype {
+        font-style: italic;
+        vertical-align: top;
+}       
+        
+.params .paramdir {
+        font-family: "courier new",courier,monospace;
+        vertical-align: top;
+}
+
+table.mlabels {
+	border-spacing: 0px;
+}
+
+td.mlabels-left {
+	width: 100%;
+	padding: 0px;
+}
+
+td.mlabels-right {
+	vertical-align: bottom;
+	padding: 0px;
+	white-space: nowrap;
+}
+
+span.mlabels {
+        margin-left: 8px;
+}
+
+span.mlabel {
+        background-color: #728DC1;
+        border-top:1px solid #5373B4;
+        border-left:1px solid #5373B4;
+        border-right:1px solid #C4CFE5;
+        border-bottom:1px solid #C4CFE5;
+	text-shadow: none;
+        color: white;
+        margin-right: 4px;
+        padding: 2px 3px;
+        border-radius: 3px;
+        font-size: 7pt;
+	white-space: nowrap;
+}
+
+
+
+/* @end */
+
+/* these are for tree view when not used as main index */
+
+div.directory {
+        margin: 10px 0px;
+        border-top: 1px solid #A8B8D9;
+        border-bottom: 1px solid #A8B8D9;
+        width: 100%;
+}
+
+.directory table {
+        border-collapse:collapse;
+}
+
+.directory td {
+        margin: 0px;
+        padding: 0px;
+	vertical-align: top;
+}
+
+.directory td.entry {
+        white-space: nowrap;
+        padding-right: 6px;
+}
+
+.directory td.entry a {
+        outline:none;
+}
+
+.directory td.entry a img {
+        border: none;
+}
+
+.directory td.desc {
+        width: 100%;
+        padding-left: 6px;
+	padding-right: 6px;
+	border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+.directory tr.even {
+	padding-left: 6px;
+	background-color: #F7F8FB;
+}
+
+.directory img {
+	vertical-align: -30%;
+}
+
+.directory .levels {
+        white-space: nowrap;
+        width: 100%;
+        text-align: right;
+        font-size: 9pt;
+}
+
+.directory .levels span {
+        cursor: pointer;
+        padding-left: 2px;
+        padding-right: 2px;
+	color: #3D578C;
+}
+
+div.dynheader {
+        margin-top: 8px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+address {
+	font-style: normal;
+	color: #2A3D61;
+}
+
+table.doxtable {
+	border-collapse:collapse;
+        margin-top: 4px;
+        margin-bottom: 4px;
+}
+
+table.doxtable td, table.doxtable th {
+	border: 1px solid #2D4068;
+	padding: 3px 7px 2px;
+}
+
+table.doxtable th {
+	background-color: #374F7F;
+	color: #FFFFFF;
+	font-size: 110%;
+	padding-bottom: 4px;
+	padding-top: 5px;
+}
+
+table.fieldtable {
+        width: 100%;
+        margin-bottom: 10px;
+        border: 1px solid #A8B8D9;
+        border-spacing: 0px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
+        -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.fieldtable td, .fieldtable th {
+        padding: 3px 7px 2px;
+}
+
+.fieldtable td.fieldtype, .fieldtable td.fieldname {
+        white-space: nowrap;
+        border-right: 1px solid #A8B8D9;
+        border-bottom: 1px solid #A8B8D9;
+        vertical-align: top;
+}
+
+.fieldtable td.fielddoc {
+        border-bottom: 1px solid #A8B8D9;
+        width: 100%;
+}
+
+.fieldtable tr:last-child td {
+        border-bottom: none;
+}
+
+.fieldtable th {
+        background-image:url('nav_f.png');
+        background-repeat:repeat-x;
+        background-color: #E2E8F2;
+        font-size: 90%;
+        color: #253555;
+        padding-bottom: 4px;
+        padding-top: 5px;
+        text-align:left;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-topright: 4px;
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom: 1px solid #A8B8D9;
+}
+
+
+.tabsearch {
+	top: 0px;
+	left: 10px;
+	height: 36px;
+	background-image: url('tab_b.png');
+	z-index: 101;
+	overflow: hidden;
+	font-size: 13px;
+}
+
+.navpath ul
+{
+	font-size: 11px;
+	background-image:url('tab_b.png');
+	background-repeat:repeat-x;
+	height:30px;
+	line-height:30px;
+	color:#8AA0CC;
+	border:solid 1px #C2CDE4;
+	overflow:hidden;
+	margin:0px;
+	padding:0px;
+}
+
+.navpath li
+{
+	list-style-type:none;
+	float:left;
+	padding-left:10px;
+	padding-right:15px;
+	background-image:url('bc_s.png');
+	background-repeat:no-repeat;
+	background-position:right;
+	color:#364D7C;
+}
+
+.navpath li.navelem a
+{
+	height:32px;
+	display:block;
+	text-decoration: none;
+	outline: none;
+}
+
+.navpath li.navelem a:hover
+{
+	color:#6884BD;
+}
+
+.navpath li.footer
+{
+        list-style-type:none;
+        float:right;
+        padding-left:10px;
+        padding-right:15px;
+        background-image:none;
+        background-repeat:no-repeat;
+        background-position:right;
+        color:#364D7C;
+        font-size: 8pt;
+}
+
+
+div.summary
+{
+	float: right;
+	font-size: 8pt;
+	padding-right: 5px;
+	width: 50%;
+	text-align: right;
+}       
+
+div.summary a
+{
+	white-space: nowrap;
+}
+
+div.ingroups
+{
+	font-size: 8pt;
+	width: 50%;
+	text-align: left;
+}
+
+div.ingroups a
+{
+	white-space: nowrap;
+}
+
+div.header
+{
+        background-image:url('nav_h.png');
+        background-repeat:repeat-x;
+	background-color: #F9FAFC;
+	margin:  0px;
+	border-bottom: 1px solid #C4CFE5;
+}
+
+div.headertitle
+{
+	padding: 5px 5px 5px 7px;
+}
+
+dl
+{
+        padding: 0 0 0 10px;
+}
+
+/* dl.note, dl.warning, dl.attention, dl.pre, dl.post, dl.invariant, dl.deprecated, dl.todo, dl.test, dl.bug */
+dl.section
+{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+dl.note
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #D0C000;
+}
+
+dl.warning, dl.attention
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #FF0000;
+}
+
+dl.pre, dl.post, dl.invariant
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #00D000;
+}
+
+dl.deprecated
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #505050;
+}
+
+dl.todo
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #00C0E0;
+}
+
+dl.test
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #3030E0;
+}
+
+dl.bug
+{
+        margin-left:-7px;
+        padding-left: 3px;
+        border-left:4px solid;
+        border-color: #C08050;
+}
+
+dl.section dd {
+	margin-bottom: 6px;
+}
+
+
+#projectlogo
+{
+	text-align: center;
+	vertical-align: bottom;
+	border-collapse: separate;
+}
+ 
+#projectlogo img
+{ 
+	border: 0px none;
+}
+ 
+#projectname
+{
+	font: 300% Tahoma, Arial,sans-serif;
+	margin: 0px;
+	padding: 2px 0px;
+}
+    
+#projectbrief
+{
+	font: 120% Tahoma, Arial,sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+#projectnumber
+{
+	font: 50% Tahoma, Arial,sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+#titlearea
+{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	border-bottom: 1px solid #5373B4;
+}
+
+.image
+{
+        text-align: center;
+}
+
+.dotgraph
+{
+        text-align: center;
+}
+
+.mscgraph
+{
+        text-align: center;
+}
+
+.caption
+{
+	font-weight: bold;
+}
+
+div.zoom
+{
+	border: 1px solid #90A5CE;
+}
+
+dl.citelist {
+        margin-bottom:50px;
+}
+
+dl.citelist dt {
+        color:#334975;
+        float:left;
+        font-weight:bold;
+        margin-right:10px;
+        padding:5px;
+}
+
+dl.citelist dd {
+        margin:2px 0;
+        padding:5px 0;
+}
+
+div.toc {
+        padding: 14px 25px;
+        background-color: #F4F6FA;
+        border: 1px solid #D8DFEE;
+        border-radius: 7px 7px 7px 7px;
+        float: right;
+        height: auto;
+        margin: 0 20px 10px 10px;
+        width: 200px;
+}
+
+div.toc li {
+        background: url("bdwn.png") no-repeat scroll 0 5px transparent;
+        font: 10px/1.2 Verdana,DejaVu Sans,Geneva,sans-serif;
+        margin-top: 5px;
+        padding-left: 10px;
+        padding-top: 2px;
+}
+
+div.toc h3 {
+        font: bold 12px/1.2 Arial,FreeSans,sans-serif;
+	color: #4665A2;
+        border-bottom: 0 none;
+        margin: 0;
+}
+
+div.toc ul {
+        list-style: none outside none;
+        border: medium none;
+        padding: 0px;
+}       
+
+div.toc li.level1 {
+        margin-left: 0px;
+}
+
+div.toc li.level2 {
+        margin-left: 15px;
+}
+
+div.toc li.level3 {
+        margin-left: 30px;
+}
+
+div.toc li.level4 {
+        margin-left: 45px;
+}
+
+.inherit_header {
+        font-weight: bold;
+        color: gray;
+        cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.inherit_header td {
+        padding: 6px 0px 2px 5px;
+}
+
+.inherit {
+        display: none;
+}
+
+tr.heading h2 {
+        margin-top: 12px;
+        margin-bottom: 4px;
+}
+
+@media print
+{
+  #top { display: none; }
+  #side-nav { display: none; }
+  #nav-path { display: none; }
+  body { overflow:visible; }
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+  .summary { display: none; }
+  .memitem { page-break-inside: avoid; }
+  #doc-content
+  {
+    margin-left:0 !important;
+    height:auto !important;
+    width:auto !important;
+    overflow:inherit;
+    display:inline;
+  }
+}
+
+</style>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SubnettingCalcs.dll
+   &#160;<span id="projectnumber">version 1.0</span>
+   </div>
+   <div id="projectbrief">(c) 2012 - Petros Kyladitis</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.1.1 -->
+<!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SubnettingCalcs Class Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="" title="SubnettingCalcs is a subnetting calculations class, wich can provide info about network hosts capacit...">SubnettingCalcs</a> is a subnetting calculations class, wich can provide info about network hosts capacity, netmask length, netmask, network prefix, lowest (first) host IP, highest (last) host IP &amp; broadcast address at string dotted address format, decimal format with 4 cell byte array and binary format with 32 cell byte array with 0 and 1 values.  
+ <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a26f557a94bba1a1f19c52200e22a711a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f557a94bba1a1f19c52200e22a711a">SubnettingCalcs</a> (string dottedIp, string dottedNetmask)</td></tr>
+<tr class="memdesc:a26f557a94bba1a1f19c52200e22a711a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with IP and Netmask as parameters <a href="#a26f557a94bba1a1f19c52200e22a711a"></a><br/></td></tr>
+<tr class="memitem:a1a751fb428351483d172eadedcc44d17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a751fb428351483d172eadedcc44d17">SubnettingCalcs</a> (string dottedIP, byte netmaskLength)</td></tr>
+<tr class="memdesc:a1a751fb428351483d172eadedcc44d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with IP and Netmask Length as parameters <a href="#a1a751fb428351483d172eadedcc44d17"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a5955d2826d1340fd62a15a6a484304c4"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5955d2826d1340fd62a15a6a484304c4">BroadcastBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5955d2826d1340fd62a15a6a484304c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Broadcast Address in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#a5955d2826d1340fd62a15a6a484304c4"></a><br/></td></tr>
+<tr class="memitem:a5a990a8dc1f373492635097a66ec8544"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a990a8dc1f373492635097a66ec8544">HiHostIpBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:a5a990a8dc1f373492635097a66ec8544"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Highest (last) Host IP in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#a5a990a8dc1f373492635097a66ec8544"></a><br/></td></tr>
+<tr class="memitem:ab8b95946e6471034a4cb79fa11d8de5d"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8b95946e6471034a4cb79fa11d8de5d">LowHostIpBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab8b95946e6471034a4cb79fa11d8de5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Lowest (first) Host IP in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#ab8b95946e6471034a4cb79fa11d8de5d"></a><br/></td></tr>
+<tr class="memitem:af65fe40cacc282d2db62db082921c709"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af65fe40cacc282d2db62db082921c709">NetprefixBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:af65fe40cacc282d2db62db082921c709"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Prefix in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#af65fe40cacc282d2db62db082921c709"></a><br/></td></tr>
+<tr class="memitem:a79f243cebbaa08863c18e462f595d1b8"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79f243cebbaa08863c18e462f595d1b8">NetmaskBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:a79f243cebbaa08863c18e462f595d1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Mask in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#a79f243cebbaa08863c18e462f595d1b8"></a><br/></td></tr>
+<tr class="memitem:af0417125e39aa26f1d6156d6f8377110"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0417125e39aa26f1d6156d6f8377110">IpBin</a><code> [get]</code></td></tr>
+<tr class="memdesc:af0417125e39aa26f1d6156d6f8377110"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current IP Address in binary array format (a 32 cell byte-type array with 0 and 1 values) <a href="#af0417125e39aa26f1d6156d6f8377110"></a><br/></td></tr>
+<tr class="memitem:aace91e4d39b03637cc83772bb8cb0ae4"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aace91e4d39b03637cc83772bb8cb0ae4">BroadcastDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:aace91e4d39b03637cc83772bb8cb0ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Broadcast Address in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#aace91e4d39b03637cc83772bb8cb0ae4"></a><br/></td></tr>
+<tr class="memitem:ada6bb0c122735b2e66234880444a861f"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada6bb0c122735b2e66234880444a861f">HiHostIpDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:ada6bb0c122735b2e66234880444a861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Highest (last) Host IP in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#ada6bb0c122735b2e66234880444a861f"></a><br/></td></tr>
+<tr class="memitem:a050e8a5e2a1a70fc56e46802bd7cff1d"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a050e8a5e2a1a70fc56e46802bd7cff1d">LowHostIpDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:a050e8a5e2a1a70fc56e46802bd7cff1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Lowest (first) Host IP in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#a050e8a5e2a1a70fc56e46802bd7cff1d"></a><br/></td></tr>
+<tr class="memitem:a9c61e044045fbf3d80d9aa6e2c8fdb14"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c61e044045fbf3d80d9aa6e2c8fdb14">NetprefixDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:a9c61e044045fbf3d80d9aa6e2c8fdb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Prefix in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#a9c61e044045fbf3d80d9aa6e2c8fdb14"></a><br/></td></tr>
+<tr class="memitem:a9b6025fedc4a9a7e4f089b439c367a1e"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b6025fedc4a9a7e4f089b439c367a1e">NetmaskDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:a9b6025fedc4a9a7e4f089b439c367a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Mask in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#a9b6025fedc4a9a7e4f089b439c367a1e"></a><br/></td></tr>
+<tr class="memitem:a868940659e1f367fef0adec5fd28828e"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a868940659e1f367fef0adec5fd28828e">IpDec</a><code> [get]</code></td></tr>
+<tr class="memdesc:a868940659e1f367fef0adec5fd28828e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current IP in decimal array format (a 4 cell byte-type array with 0 to 255 values) <a href="#a868940659e1f367fef0adec5fd28828e"></a><br/></td></tr>
+<tr class="memitem:ab1ac4e245d141b23816fbe14d51bb77b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1ac4e245d141b23816fbe14d51bb77b">Broadcast</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab1ac4e245d141b23816fbe14d51bb77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Broadcast Address in dotted string format "xxx.xxx.xxx.xxx" <a href="#ab1ac4e245d141b23816fbe14d51bb77b"></a><br/></td></tr>
+<tr class="memitem:a736b50c39ef3be0996e8673b6ba96aac"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a736b50c39ef3be0996e8673b6ba96aac">HiHostIp</a><code> [get]</code></td></tr>
+<tr class="memdesc:a736b50c39ef3be0996e8673b6ba96aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Highest (last) Host IP in dotted string format "xxx.xxx.xxx.xxx" <a href="#a736b50c39ef3be0996e8673b6ba96aac"></a><br/></td></tr>
+<tr class="memitem:a0facc2f28f6fad0828f95b59f43c3f19"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0facc2f28f6fad0828f95b59f43c3f19">LowHostIp</a><code> [get]</code></td></tr>
+<tr class="memdesc:a0facc2f28f6fad0828f95b59f43c3f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Lowest (first) Host IP in dotted string format "xxx.xxx.xxx.xxx" <a href="#a0facc2f28f6fad0828f95b59f43c3f19"></a><br/></td></tr>
+<tr class="memitem:a73fcbdc350f1cd2a76939b8966540709"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73fcbdc350f1cd2a76939b8966540709">Netprefix</a><code> [get]</code></td></tr>
+<tr class="memdesc:a73fcbdc350f1cd2a76939b8966540709"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Prefix in dotted string format "xxx.xxx.xxx.xxx" <a href="#a73fcbdc350f1cd2a76939b8966540709"></a><br/></td></tr>
+<tr class="memitem:abda4419a1e748397a5707a7a3a9ab7bf"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda4419a1e748397a5707a7a3a9ab7bf">Netmask</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abda4419a1e748397a5707a7a3a9ab7bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Mask in dotted string format "xxx.xxx.xxx.xxx" <a href="#abda4419a1e748397a5707a7a3a9ab7bf"></a><br/></td></tr>
+<tr class="memitem:acfd2507889dd4ca10984553f890de256"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfd2507889dd4ca10984553f890de256">Ip</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:acfd2507889dd4ca10984553f890de256"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current IP in dotted string format "xxx.xxx.xxx.xxx" <a href="#acfd2507889dd4ca10984553f890de256"></a><br/></td></tr>
+<tr class="memitem:a49d58983bbd06313f3675c4fd489abe3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d58983bbd06313f3675c4fd489abe3">NetCapacity</a><code> [get]</code></td></tr>
+<tr class="memdesc:a49d58983bbd06313f3675c4fd489abe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Capacity. How many hosts can be addressed in the network. <a href="#a49d58983bbd06313f3675c4fd489abe3"></a><br/></td></tr>
+<tr class="memitem:a7ca7116e6b1f133ca69628fd64869f72"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca7116e6b1f133ca69628fd64869f72">NetmaskLength</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a7ca7116e6b1f133ca69628fd64869f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Network Mask Length. A number from 8 to 30. <a href="#a7ca7116e6b1f133ca69628fd64869f72"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="" title="SubnettingCalcs is a subnetting calculations class, wich can provide info about network hosts capacit...">SubnettingCalcs</a> is a subnetting calculations class, wich can provide info about network hosts capacity, netmask length, netmask, network prefix, lowest (first) host IP, highest (last) host IP &amp; broadcast address at string dotted address format, decimal format with 4 cell byte array and binary format with 32 cell byte array with 0 and 1 values. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a26f557a94bba1a1f19c52200e22a711a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="">SubnettingCalcs</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dottedIp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dottedNetmask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with IP and Netmask as parameters</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dottedIp</td><td>IP in 4 segments dotted format (xxx.xxx.xxx.xxx)</td></tr>
+    <tr><td class="paramname">dottedNetmask</td><td>Netmask in 4 segments dotted format (xxx.xxx.xxx.xxx)</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a751fb428351483d172eadedcc44d17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="">SubnettingCalcs</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dottedIP</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>netmaskLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with IP and Netmask Length as parameters</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dottedIP</td><td>IP in 4 segments dotted format (xxx.xxx.xxx.xxx)</td></tr>
+    <tr><td class="paramname">netmaskLength</td><td>Netmask Length</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Property Documentation</h2>
+<a class="anchor" id="ab1ac4e245d141b23816fbe14d51bb77b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Broadcast</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Broadcast Address in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="a5955d2826d1340fd62a15a6a484304c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] BroadcastBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Broadcast Address in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="aace91e4d39b03637cc83772bb8cb0ae4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] BroadcastDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Broadcast Address in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a736b50c39ef3be0996e8673b6ba96aac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string HiHostIp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Highest (last) Host IP in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a990a8dc1f373492635097a66ec8544"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] HiHostIpBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Highest (last) Host IP in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="ada6bb0c122735b2e66234880444a861f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] HiHostIpDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Highest (last) Host IP in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="acfd2507889dd4ca10984553f890de256"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Ip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The current IP in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="af0417125e39aa26f1d6156d6f8377110"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] IpBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The current IP Address in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a868940659e1f367fef0adec5fd28828e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] IpDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The current IP in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a0facc2f28f6fad0828f95b59f43c3f19"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string LowHostIp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Lowest (first) Host IP in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8b95946e6471034a4cb79fa11d8de5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] LowHostIpBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Lowest (first) Host IP in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a050e8a5e2a1a70fc56e46802bd7cff1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] LowHostIpDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Lowest (first) Host IP in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a49d58983bbd06313f3675c4fd489abe3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NetCapacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Capacity. How many hosts can be addressed in the network.</p>
+
+</div>
+</div>
+<a class="anchor" id="abda4419a1e748397a5707a7a3a9ab7bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Netmask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Mask in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="a79f243cebbaa08863c18e462f595d1b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] NetmaskBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Mask in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b6025fedc4a9a7e4f089b439c367a1e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] NetmaskDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Mask in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ca7116e6b1f133ca69628fd64869f72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte NetmaskLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Mask Length. A number from 8 to 30.</p>
+
+</div>
+</div>
+<a class="anchor" id="a73fcbdc350f1cd2a76939b8966540709"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Netprefix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Prefix in dotted string format "xxx.xxx.xxx.xxx"</p>
+
+</div>
+</div>
+<a class="anchor" id="af65fe40cacc282d2db62db082921c709"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] NetprefixBin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Prefix in binary array format (a 32 cell byte-type array with 0 and 1 values)</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c61e044045fbf3d80d9aa6e2c8fdb14"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] NetprefixDec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Network Prefix in decimal array format (a 4 cell byte-type array with 0 to 255 values)</p>
+
+</div>
+</div>
+
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generated for Multipetros.SubnettingCalcs by &#160; <a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.1.1
+</small></address>
+</body>
+</html>
